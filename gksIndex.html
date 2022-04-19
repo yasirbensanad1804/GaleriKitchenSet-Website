@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Galeri Kitchen Set</title>
+    <link rel="stylesheet" href="background_styles.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<style>
+    .floatingbtn {
+        width: 80px;
+        height: 80px;
+        background: #128C7E;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        border-radius: 50%;
+        color: #ffff;
+        font-size: 40px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+        position: fixed;
+        right: 50px;
+        bottom: 50px;
+        outline: auto;
+        outline-color: #ffff
+    }
+
+    * {
+        box-sizing: border-box;
+        font: optional;
+    }
+
+    body {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #333;
+        color: white;
+
+    }
+
+    .brand-title {
+        font-size: 1.5rem;
+        margin: .5rem;
+    }
+
+    .navbar-links ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+
+    }
+
+    .navbar-links li {
+        list-style: none;
+
+    }
+
+    .navbar-links li a {
+        text-decoration: none;
+        color: white;
+        padding: 1rem;
+        display: block;
+    }
+
+    .navbar-links li:hover {
+        background-color: #555;
+
+    }
+
+    .toogle-button {
+        position: absolute;
+        top: .75rem;
+        right: 1rem;
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+
+    }
+
+    .toogle-button .bar {
+        height: 3px;
+        width: 100%;
+        background-color: #fff;
+        border-radius: 10px;
+    }
+
+    @media (max-width: 400px){
+        .toogle-button{
+            display: flex;
+        }
+        .navbar-links{
+            /* display: none; */
+            width: 100%;
+            
+        }
+        .navbar{
+            flex-direction: column;
+            align-items: flex-start;
+
+        }
+        .navbar-links ul{
+            width: 100%;
+            flex-direction: column;
+        }
+        .navbar-links li {
+            text-align: center;
+
+        }
+        .navbar-links li a {
+            padding: .5rem 1rem;
+        }
+        .navbar-links.active {
+            display: flex ;
+        }
+
+    }
+
+
+</style>
+
+<body>
+    <a href="https://wa.me/6281213434291" class="material-icons floatingbtn">whatsapp</a>
+    <nav class="navbar">
+        <div class="brand-title">GaleriKitchenSet</div>
+        <a href="#" class="toogle-button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
+        <div class="navbar-links">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+</body>
+<script>
+    const toogleButton = document.getElementsByClassName('toogle-button')[0]
+    const navbarLinks = document.getElementsByClassName('navbar-links')[0]
+
+    toogleButton.addEventListener('click', () => {
+        navbarLinks.classList.toggle('active')
+    })
+</script>
+
+</html>
